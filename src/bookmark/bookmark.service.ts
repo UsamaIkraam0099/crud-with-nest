@@ -15,11 +15,11 @@ export class BookmarkService {
       });
 
       if (bookMarks.length <= 0)
-        throw new ForbiddenException(`No bookmarks found buy id: ${userId}`);
+        throw new ForbiddenException(`No bookmarks found by id: ${userId}`);
 
       return bookMarks;
     } catch (err) {
-      throw new ForbiddenException(`No bookmarks found buy id: ${userId}`);
+      throw new ForbiddenException(`No bookmarks found by id: ${userId}`);
     }
   }
 
@@ -33,13 +33,11 @@ export class BookmarkService {
       });
 
       if (Object.keys(bookmark).length === 0)
-        throw new ForbiddenException(
-          `No bookmarks found buy id: ${bookmarkId}`,
-        );
+        throw new ForbiddenException(`No bookmarks found by id: ${bookmarkId}`);
 
       return bookmark;
     } catch (err) {
-      throw new ForbiddenException(`No bookmarks found buy id: ${bookmarkId}`);
+      throw new ForbiddenException(`No bookmarks found by id: ${bookmarkId}`);
     }
   }
 

@@ -12,7 +12,7 @@ import {
 
 // Others
 import { JwtGuard } from '../auth/guard';
-import { GetUser } from 'src/auth/decorator';
+import { GetUser } from '../auth/decorator';
 import { BookmarkService } from './bookmark.service';
 import { CreateBookmarkDto, EditBookmarkDto } from './dto';
 
@@ -21,7 +21,7 @@ import { CreateBookmarkDto, EditBookmarkDto } from './dto';
 export class BookmarkController {
   constructor(private bookmarkService: BookmarkService) {}
 
-  @Get('/getBookmarks')
+  @Get('getBookmarks')
   getBookmarks(@GetUser('id') userId: number) {
     return this.bookmarkService.getBookmarks(userId);
   }
